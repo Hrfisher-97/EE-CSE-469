@@ -142,14 +142,10 @@ module Single_Cycle_CPU(instr);
 	end
 	
  // 16-bit sign Extension
-module signextender16(
-  input [7:0] unextended,//the msb bit is the sign bit
-  input clk,
-  output reg [15:0] extended );
-
-always@(posedge clk)
-  begin 
-    extended <= $signed(unextended);
-  end
+module signextender16(unextended, extended); 
+  input  logic signed [7:0] unextended;//the msb bit is the sign bit
+  output reg signed [15:0] extended ;
   
+  
+assign extended = unextended;
 endmodule
