@@ -1,0 +1,41 @@
+module fullAdder (A, B, Cin, Co, Sum);
+	input A, B, Cin;
+	output Co, Sum;
+	
+	wire D, E, F, G, H;
+	
+	xor XOR1(D, A, B);
+	xor XOR2(Sum, D, C);
+	and and1(E, A, B);
+	and and2(F, A, Cin);
+	and and3(G, A
+
+	
+module Task3(A,B,C,Sum,Carry);
+
+input A,B,C;
+output Sum, Carry;
+wire D,E,F;
+
+xor XOR1(D,A,B);
+xor XOR2(Sum,D,C);
+nand NAND1(E,D,C);
+nand NAND2(F,A,B);
+nand NAND3(Carry,E,F);
+
+endmodule 
+
+// 2:1 mux
+module mux2_1(in, sel, out);
+	output      out;
+	input [1:0] in;
+	input       sel;
+
+	wire selBar, temp1, temp2;
+	
+	not a1(selBar, sel);
+	and a2(temp1, in[1], sel);
+	and a3(temp2, in[0], selBar);
+	or  a4(out, temp1, temp2);
+
+endmodule
