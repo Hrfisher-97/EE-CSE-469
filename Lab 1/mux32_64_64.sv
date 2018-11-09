@@ -43,10 +43,10 @@ module mux16_1(in, sel, out);
 	
 	wire temp1, temp2, temp3, temp4;
 	
-	mux4_1 a1(in[15:12], sel[1:0], temp1);
-	mux4_1 a2(in[11:8],  sel[1:0], temp2);
-	mux4_1 a3(in[7:4], sel[1:0], temp3);
-	mux4_1 a4(in[3:0], sel[1:0], temp4);
+	mux4_1 #0.05a1(in[15:12], sel[1:0], temp1);
+	mux4_1 #0.05a2(in[11:8],  sel[1:0], temp2);
+	mux4_1 #0.05a3(in[7:4], sel[1:0], temp3);
+	mux4_1 #0.05a4(in[3:0], sel[1:0], temp4);
 	mux4_1 a5({temp1, temp2, temp3, temp4}, sel[3:2], out);
 endmodule
 
